@@ -8,9 +8,6 @@ Minimal, correct drag & drop sample for Tauri v2 with a React UI. It shows dropp
 - File preview: uses the v2 fs plugin to read text content (truncated for large files).
 - Strict v2: config schema `.../config/2`, crates `tauri = "2"`, `@tauri-apps/api@^2`, capabilities for `core`, `opener`, and `fs`. No v1 allowlist/keys.
 
-## Run
-- Desktop: `npm run tauri dev`
-
 ## Key Files
 - UI
   - `src/components/DragDropZone.tsx`: drop zone, list, preview, open buttons.
@@ -26,6 +23,3 @@ Minimal, correct drag & drop sample for Tauri v2 with a React UI. It shows dropp
 - Dropped paths are auto-scoped by Tauri v2 at drop-time; fs reads do not require manual allowlisting.
 - The opener plugin’s ESM export can vary by bundler; `src/lib/opener.ts` resolves multiple shapes and falls back to `invoke("open_path_cmd")` if needed.
 - Previews limit to ~200KB and display errors for unreadable/binary data.
-
-## More Details
-- See `ApproachLog.md` for design decisions
